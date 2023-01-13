@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,10 +17,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pagamento com Cartão de Débito" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3D1-0L-07D">
+                                <rect key="frame" x="175" y="415" width="258" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eKt-6m-UCB">
+                                <rect key="frame" x="20" y="139.33333333333334" width="353" height="122.00000000000003"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ja-ex-uTF">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Validade (mês)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d7s-9z-KQN">
+                                        <rect key="frame" x="0.0" y="44" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Validade (ano)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gr2-5u-xIR">
+                                        <rect key="frame" x="0.0" y="88" width="353" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0Ja-ex-uTF" firstAttribute="leading" secondItem="eKt-6m-UCB" secondAttribute="leading" id="8lD-8Y-899"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Ja-ex-uTF" secondAttribute="trailing" id="EPW-ht-7dY"/>
+                                    <constraint firstAttribute="trailing" secondItem="d7s-9z-KQN" secondAttribute="trailing" id="Utq-1Z-9Qn"/>
+                                    <constraint firstAttribute="trailing" secondItem="gr2-5u-xIR" secondAttribute="trailing" id="YCI-IT-eQ2"/>
+                                    <constraint firstItem="d7s-9z-KQN" firstAttribute="leading" secondItem="eKt-6m-UCB" secondAttribute="leading" id="ZPm-hy-Pg2"/>
+                                    <constraint firstItem="gr2-5u-xIR" firstAttribute="leading" secondItem="eKt-6m-UCB" secondAttribute="leading" id="aWC-LF-rHK"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMm-SQ-RW4">
-                                <rect key="frame" x="159" y="421" width="75" height="35"/>
+                                <rect key="frame" x="20" y="421.33333333333331" width="353" height="34.333333333333314"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.80000000000000004" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pagar com Débito" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="onButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ib4-gu-VXM"/>
                                 </connections>
@@ -28,10 +65,22 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3D1-0L-07D" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="74w-PM-jhL"/>
+                            <constraint firstItem="GMm-SQ-RW4" firstAttribute="trailing" secondItem="eKt-6m-UCB" secondAttribute="trailing" id="ICQ-q1-2Dw"/>
                             <constraint firstItem="GMm-SQ-RW4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Nd9-Jz-bP1"/>
+                            <constraint firstItem="3D1-0L-07D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ZbT-me-ygs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eKt-6m-UCB" secondAttribute="trailing" constant="20" id="lnz-Xt-cjR"/>
+                            <constraint firstItem="eKt-6m-UCB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pWw-hk-ZI4"/>
                             <constraint firstItem="GMm-SQ-RW4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="tQe-4l-jZG"/>
+                            <constraint firstItem="eKt-6m-UCB" firstAttribute="top" secondItem="3D1-0L-07D" secondAttribute="bottom" constant="30" id="wD3-C7-0db"/>
+                            <constraint firstItem="GMm-SQ-RW4" firstAttribute="leading" secondItem="eKt-6m-UCB" secondAttribute="leading" id="xO3-ye-CgR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardNumberTextField" destination="0Ja-ex-uTF" id="qqk-Jp-69N"/>
+                        <outlet property="expirationMonthTextField" destination="d7s-9z-KQN" id="dN1-Af-pur"/>
+                        <outlet property="expirationYearTextField" destination="gr2-5u-xIR" id="bIo-1A-AKA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

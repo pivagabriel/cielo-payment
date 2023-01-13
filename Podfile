@@ -5,6 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'payment' do
   pod 'Braspag3Ds'
+  pod 'Alamofire'
 end
 
 platform :ios, '11.0'
